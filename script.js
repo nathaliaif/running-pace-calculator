@@ -1,5 +1,6 @@
 const labelResult = document.getElementById('result-label');
 const labelResultDescription = document.getElementById('result__description');
+const resetButton = document.getElementById('reset');
 
 const buttonCalculateKmH = document.getElementById('calculate').addEventListener('click', ()=>{
     //Get input values
@@ -38,6 +39,15 @@ const buttonCalculateKmH = document.getElementById('calculate').addEventListener
             editResultTexts("Your pace will be:", `${resultPace} min/km`);
             break;
     }
+})
+
+resetButton.addEventListener('click', ()=>{
+    const inputs = document.querySelectorAll('input');
+    inputs.forEach(input => {
+        input.type == "time" ?  input.value = "00:00" : input.value = '';
+    })
+
+    editResultTexts("You'll need to run:", '--');
 })
 
 function getCheckedValue(){

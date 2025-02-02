@@ -53,6 +53,7 @@ main form{
     display: flex;
     flex-direction: column;
     row-gap: 1rem;
+    width: 100%;
 
 
     h1{
@@ -63,6 +64,20 @@ main form{
 
     .calculator-header__buttons {
         margin-top: 0.7rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        > a {
+            &:hover{
+                text-decoration: underline;
+                cursor: pointer;
+            }
+    }
+
+    }
+
+    .calculator-header__buttons__results-options {
         display: flex;
         column-gap: 0.6rem;
 
@@ -254,6 +269,7 @@ footer {
         width: 55%;
         border-radius: 10px;
         background-color: var(--dark-blue);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
 
     main form{

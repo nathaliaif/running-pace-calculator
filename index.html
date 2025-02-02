@@ -15,20 +15,23 @@
             <form>
                 <div class="calculator-header">
                     <h1>Pace Calculator</h1>
-                   <div class="calculator-header__buttons">
-                       <input type="radio" id="radio-km-h" name="result-type" checked><label for="radio-km-h">Km/H</label>
-                       <input type="radio" id="radio-pace" name="result-type"><label for="radio-pace">Pace</label>
-                   </div>
+                    <div class="calculator-header__buttons">
+                        <div class="calculator-header__buttons__results-options">
+                            <input type="radio" id="radio-km-h" name="result-type" checked><label for="radio-km-h">Km/H</label>
+                            <input type="radio" id="radio-pace" name="result-type"><label for="radio-pace">Pace</label>
+                        </div>
+                        <a id="reset">Reset</a>
+                    </div>
                 </div>
                 <div class="calculator-inputs">
                     <div class="calculator-inputs__total-km inputs-area">
-                        <label for="total-km">Total distance</label>
+                        <label for="total-km" id="label-total-km">Total distance</label>
                         <input type="number" placeholder="Total Km" id="total-km">
                     </div>
     
                     <div class="calculator-inputs__total-time inputs-area">
-                        <label for="total-time">Time (hh:mm)</label>
-                        <input type="time" placeholder="Total Time" id="total-time" value="00:00">
+                        <label for="total-time" id="label-total-time">Time (hh:mm)</label>
+                        <input type="time" id="total-time" value="00:00">
                     </div>
                 </div>
                 <a id="calculate" class="button-calculate">Calculate</a>
