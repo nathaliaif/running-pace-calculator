@@ -4,24 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Running Pace Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Martian+Mono:wght@100..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
     <main>
-        <form>
-            <h1>Pace Calculator</h1>
-            <h3>Km/H</h3>
-            <label for="total-km">Enter total distance</label>
-            <input type="number" placeholder="Total Km" id="total-km">
-
-            <label for="total-time">Time (hh:mm)</label>
-            <input type="time" placeholder="Total Time" id="total-time" value="00:00">
-
-            <a id="calculate-kmh">Calculate</a>
-            <p id="result-km-h" class="result">22</p>
-        </form>
+        <div class="background-image"></div>
+        <div class="full-form">
+            <form>
+                <div class="calculator-header">
+                    <h1>Pace Calculator</h1>
+                   <div class="calculator-header__buttons">
+                       <input type="radio" id="radio-km-h" name="result-type" checked><label for="radio-km-h">Km/H</label>
+                       <input type="radio" id="radio-pace" name="result-type"><label for="radio-pace">Pace</label>
+                   </div>
+                </div>
+                <div class="calculator-inputs">
+                    <div class="calculator-inputs__total-km inputs-area">
+                        <label for="total-km">Total distance</label>
+                        <input type="number" placeholder="Total Km" id="total-km">
+                    </div>
+    
+                    <div class="calculator-inputs__total-time inputs-area">
+                        <label for="total-time">Time (hh:mm)</label>
+                        <input type="time" placeholder="Total Time" id="total-time" value="00:00">
+                    </div>
+                </div>
+                <a id="calculate" class="button-calculate">Calculate</a>
+            </form>
+            <div class="form-result">
+                <p class="result"><span id="result__description">You'll need to run: </span><span id="result-label" class="result-km-h">--</span></p>
+            </div>
+        </div>
     </main>
+    <footer>
+        <a id="test">Nathalia Irokawa</a>
+    </footer>
     
 </body>
 </html>
