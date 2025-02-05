@@ -15,7 +15,7 @@ radioDiv.addEventListener("click", e => {
             editResultTexts(RESULT_DESCRIPTION_TEXTS.KM_H, '--');
             labelResult.style.fontSize = "1.5rem";
             break;
-            case "radio-pace":
+        case "radio-pace":
             editResultTexts(RESULT_DESCRIPTION_TEXTS.PACE, '--');
             break;
     } 
@@ -24,10 +24,10 @@ radioDiv.addEventListener("click", e => {
 const buttonCalculateKmH = document.getElementById('calculate').addEventListener('click', ()=>{
     //Get input values
     const inputDistance = parseFloat(document.getElementById('total-km').value);
-
     const inputTotalTime = document.getElementById('total-time').value;
     labelResult.style.fontSize = "1.5rem";
 
+    // Error handling
     if (!inputDistance || !inputTotalTime){
         labelResult.textContent = "Please enter both distance and time.";
         labelResult.style.fontSize = "1rem";
@@ -72,11 +72,8 @@ resetButton.addEventListener('click', ()=>{
 })
 
 function getCheckedValue(){
-    for (var i=0; i < radios.length; i++){
-        if (radios[i].checked){
-            return radios[i].id;
-        }
-    }
+    const checkedRadio = document.querySelector("input[name='result-type']:checked");
+    return checkedRadio.id;
 }
 
 function editResultTexts(description, result){
