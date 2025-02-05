@@ -2,29 +2,29 @@ const labelResult = document.getElementById('result-label');
 const labelResultDescription = document.getElementById('result__description');
 const resetButton = document.getElementById('reset');
 const radios = document.getElementsByName('result-type');
+const radioDiv = document.querySelector(".calculator-header__buttons__results-options");
 
 const RESULT_DESCRIPTION_TEXTS = {
     KM_H: "You'll need to run:",
     PACE: "Your pace will be:"
 }
 
-for(var i=0; i < radios.length; i++){
-    radios[i].addEventListener("click", () => {
-        switch(getCheckedValue()){
-            case "radio-km-h":
-                labelResultDescription.innerText = RESULT_DESCRIPTION_TEXTS.KM_H;
-                break;
+radioDiv.addEventListener("click", e => {
+    switch(e.target.id){
+        case "radio-km-h":
+            editResultTexts(RESULT_DESCRIPTION_TEXTS.KM_H, '--');
+            labelResult.style.fontSize = "1.5rem";
+            break;
             case "radio-pace":
-                labelResultDescription.innerText = RESULT_DESCRIPTION_TEXTS.PACE;
-                break;
-        }
-    })
-}
+            editResultTexts(RESULT_DESCRIPTION_TEXTS.PACE, '--');
+            break;
+    } 
+})
 
 const buttonCalculateKmH = document.getElementById('calculate').addEventListener('click', ()=>{
     //Get input values
     const inputDistance = parseFloat(document.getElementById('total-km').value);
-    
+
     const inputTotalTime = document.getElementById('total-time').value;
     labelResult.style.fontSize = "1.5rem";
 
@@ -82,5 +82,6 @@ function getCheckedValue(){
 function editResultTexts(description, result){
     labelResultDescription.innerText = description;
     labelResult.innerText = result;
+    labelResult.style.fontSize = "1.5rem";
     return;
 }
